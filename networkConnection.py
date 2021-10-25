@@ -5,7 +5,7 @@
     userpass -> Κωδικος του χρηστη
     dbtype -> Τυπος βασης
 """
-import mysql.connector as connector
+import mysql.connector as c
 
 class networkConnection:
 
@@ -14,11 +14,6 @@ class networkConnection:
         self.username=username
         self.userpass=userpass
         self.dbtype=dbtype
-        self.conn
-        
-        
-    #function για την συνδεση στην βαση
-    def dbConnection(self):
         try:
             self.conn =c.connect(host=self.dbtype,user=self.username,password=self.userpass,database=self.dbname)
             if self.conn.is_connected:
