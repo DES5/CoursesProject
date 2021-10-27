@@ -26,8 +26,9 @@ class networkConnection:
     #funtion για την αποσυνδεση με την βαση
     def dbDisconnect(self):
         try:
-            self.conn.close()
-            print("Succeful Disconnect from " + self.dbname)
+            if self.conn.is_connected:    
+                self.conn.close()
+                print("Succeful Disconnect from " + self.dbname)
         except ConnectionError as erro:
             print(erro) 
 
