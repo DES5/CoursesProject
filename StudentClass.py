@@ -7,10 +7,10 @@ from random import randint
 
 
 class Student:
-    def __init__(self,name,fname):
+    def __init__(self,name,lname,id):
         self.name=name
-        self.fname=fname
-        self.id=name[0].lower() + fname[0].lower() + str(randint(100, 999))
+        self.lname=lname
+        self.id=id
         
 
 

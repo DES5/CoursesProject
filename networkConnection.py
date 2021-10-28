@@ -7,39 +7,21 @@
 """
 import mysql.connector as c
 from mysql.connector import Error 
-
+import StudentClass
 
 
     
-''' try:
-    self.conn =c.connect(host=self.dbtype,user=self.username,password=self.userpass,database=self.dbname)
-    if self.conn.is_connected:
-        print ("Succeful Connection with " + self.dbname)
-        print("Version: " + self.conn.get_server_info())
-except Error as e:
-    print("Error while try connecting with server ", e) '''
-
-
-#funtion για την αποσυνδεση με την βαση
-''' def dbDisconnect(self):
-try:
-    if self.conn.is_connected:    
-        self.conn.close()
-        print("Succeful Disconnect from " + self.dbname)
-except Error as e:
-    print("Error while try to disconnect from server", e) 
- '''
 
 
 #function για την εισαγωγη δεδομενων στον πινακα Student
-def dbInsertDataAtStudent(hostname,username,userpass,db):
+def dbInsertDataAtStudent(hostname,username,userpass,db,stud):
     try:
         conn=c.connect(host=hostname,user=username,password=userpass,database=db)
-        if conn.is_connected:
-            query = """INSERT INTO ExampleTable 
-                    VALUES ('hi',29)"""
+        if conn.is_connected:            
             cursor = conn.cursor()
-            cursor.execute(query)
+            query = "INSERT INTO Student VALUES (%s,%s,%s)"
+            data=(stud.name,stud.lname,stud.id)
+            cursor.execute(query,data)
             conn.commit()
             print("The Table has updated")
     except Error as e:
@@ -54,8 +36,8 @@ def dbInsertDataAtStudent(hostname,username,userpass,db):
             
 
 
-
-dbInsertDataAtStudent("localhost","admin","Sg147896325!","Example")
+st=StudentClass.Student("kostas","konstantinidhs",174998)
+dbInsertDataAtStudent("localhost","admin","Sg147896325!","CoursesPROJECT",st)
 
 
 
