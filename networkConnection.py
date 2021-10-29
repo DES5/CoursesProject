@@ -1,10 +1,5 @@
-""" Κλαση για την συνδεση με την βαση 
-    dbname -> Ονομα της βασης 
-    dbtable-> ονομα του πινακα τησ βασης 
-    username -> Ονομα του χρηστη
-    userpass -> Κωδικος του χρηστη
-    dbtype -> Τυπος βασης
-"""
+#Αρχειο για την διαχειρηση της βασης και των ερωτηματων που θα δημιουργηθουν
+
 import mysql.connector as c
 from mysql.connector import Error 
 import StudentClass
