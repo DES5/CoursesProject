@@ -12,6 +12,7 @@ class Student:
         self.lname=lname
         self.id=id
         
+    
 
 
        
