@@ -2,16 +2,19 @@
 
 import mysql.connector as c
 from mysql.connector import Error 
+import 
 import StudentClass
-import cx_Oracle as cx
 
 
-def OracleConnection():
-    connection = cx.connect("it174999/Sg159753!@192.168.6.21:1521/CoursesProject")
+
+
+def PostGresConnevtion():cx.connect("it174999/Sg159753!@1
+    connection = c.connect(host=)
     cur = connection.cursor()
     cur.execute('CREATE TABLE Test (PersonID int not null PRIMARY KEY)')
     cur.close()
     connection.close()
+
 
 
 #function για την εισαγωγη δεδομενων στον πινακα Student
