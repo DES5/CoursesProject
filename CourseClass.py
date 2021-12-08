@@ -8,12 +8,62 @@
 
 
 class Course:
-    def __init__(self,name,id,phase,status,etc,grade):
-        self.name=name
-        self.id=id
-        self.phase=phase
-        self.status=status
-        self.etc=etc
-        self.grade=grade
+    
+    __etc=6
+    
+    def __init__(self,name,id,phase,status,grade):
+        self.__name=name
+        self.__id=id
+        self.__phase=phase
+        self.__status=status
+        self.__grade=grade
 
-        
+    @property
+    def name(self):
+        return self.__name  
+    
+    @property
+    def id(self):
+        return self.__id
+    
+    
+    @property
+    def phase(self):
+        return self.__phase
+    
+    
+    @property
+    def status(self):
+        return self.__status
+    
+    
+    @property
+    def grade(self):
+        return self.__grade
+    
+    @property
+    def etc(self):
+        return self.__etc
+    
+    @name.setter
+    def name(self,name):
+        self.__name=name
+    
+    @id.setter
+    def id(self,id):
+        self.__id=id
+    
+    @phase.setter
+    def phase(self,phase):
+        self.__phase=phase
+    
+    @status.setter
+    def status(self,status):
+        self.__status=status
+    
+    @grade.setter
+    def grade(self,grade):
+        self.__grade=grade
+    
+    
+    
