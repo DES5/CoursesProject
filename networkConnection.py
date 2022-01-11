@@ -23,8 +23,9 @@ def PostgresStartConn():
     conn=None
     try:
         params=config()
-        print("Connecting")
         conn = p.connect(**params)
+        if conn.closed==0:
+            print("connecting")
     except (Exception, p.Error) as error:
         print(error)
     finally:
